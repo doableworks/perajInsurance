@@ -1,65 +1,107 @@
+import ParallaxScroll from "@/animations/ParallaxWrapper";
+import TransitionHorizontal from "@/animations/TransitionHorizontal";
+import TransitionVertical from "@/animations/TransitionVertical";
+import CustomButton from "@/components/CustomButton";
+import Navbar from "@/components/Navbar";
+import LegacyCarousel from "@/components/pagespecific/homepage/LegacyCarousel";
+import StatsSection from "@/components/pagespecific/homepage/StatsSection";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import Image from "next/image";
+import React from "react";
 
-export default function Home() {
+function page() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <Navbar />
+      <ParallaxScroll>
+        <section className="relative flex flex-col-reverse items-start justify-bottom relative min-h-[92vh]">
+          <Image
+            src="/Hero.png"
+            alt="Hero Image"
+            layout="fill"
+            objectFit="cover"
+            fill
+          />
+          <div className="bg-gradient-to-t from-[#001D2D] to-transparent h-[60vh] w-full z-50 absolute bottom-0" />
+
+          <div className="text-text-secondary z-50 relative text-center py-24 w-full max-w-7xl mx-auto">
+            <TransitionVertical>
+              <h1 className="text-5xl leading-tight md:leading-snug text-left">
+                <TextGenerateEffect
+                  words="Insurance solutions that understand"
+                  duration={1}
+                  className="text-5xl font-normal"
+                />
+                <TextGenerateEffect
+                  words="businesses and the people behind them."
+                  duration={1}
+                  className="text-5xl font-normal"
+                />
+              </h1>
+              <div className="w-full h-[1px] my-10 bg-white/70"></div>
+              <div className="w-full flex items-center justify-between">
+                <p className="text-left text-lg md:text-xl w-1/2">
+                  A trusted partner for companies seeking well-structured,
+                  <br />
+                  carefully negotiated insurance programs.
+                </p>
+                <CustomButton
+                  text="Explore Our Expertise"
+                  variant="secondary"
+                />
+              </div>
+            </TransitionVertical>
+          </div>
+        </section>
+      </ParallaxScroll>
+      <section className="w-full mx-auto my-20 py-24 relative z-50 bg-background">
+        <div className="max-w-7xl mx-auto flex flex-col">
+          <div className="px-6 py-2 bg-primary-foreground text-text-primary text-sm font-medium rounded-sm transition-colors duration-300 flex items-center w-fit">
+            <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
+            Why Peraj
+          </div>
+          <div className="w-full flex items-center justify-between mt-4 flex-1">
+            <h2 className="text-5xl leading-tight md:leading-snug text-left flex-[0.4]">
+              <TransitionHorizontal>In the numbers</TransitionHorizontal>
+            </h2>
+            <div className="text-left text-lg flex-[0.5] pr-20">
+              <TransitionVertical>
+                Our growth is built on trust, relationships, and reach. For over
+                four decades, Peraj has served clients across India and abroad
+                with dedicated teams, strategic presence, and enduring
+                partnerships rooted in integrity.
+              </TransitionVertical>
+            </div>
+          </div>
+          <StatsSection />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+      <section className="w-full mx-auto mb-20 relative z-50 bg-background">
+        <div className="flex flex-col items-start">
+          <div className="w-fit ml-24 px-6 py-2 bg-primary-foreground text-text-primary text-sm font-medium rounded-sm transition-colors duration-300 flex items-center w-fit mb-8">
+            <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
+            Legacy
+          </div>
+          <div className=" max-w-7xl  mx-auto w-full flex items-center justify-between mb-12">
+            <h2 className="text-5xl leading-tight md:leading-snug text-left flex-1">
+              <TransitionHorizontal>
+                A Legacy Since 1951, Shaping a Global <br/> Insurance Advisory Today
+              </TransitionHorizontal>
+            </h2>
+            <div className="text-left text-lg">
+              <TransitionVertical>
+                <CustomButton
+                  text="Learn More"
+                  variant="primary"
+                />
+              </TransitionVertical>
+            </div>
+          </div>
+          <LegacyCarousel />
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
+
+export default page;
