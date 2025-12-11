@@ -104,7 +104,7 @@ function StatsSection() {
               </>
             )}
             <div
-              className="bg-gradient-1 h-56 px-4 py-2 flex flex-col"
+              className="bg-gradient-1 h-56 px-4 py-2 flex flex-col font-forum font-light"
               style={{
                 clipPath: "polygon(85% 0, 100% 20%, 100% 100%, 0 100%, 0 0)",
               }}

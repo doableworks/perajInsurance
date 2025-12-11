@@ -16,7 +16,7 @@ function CustomButton({
   variant = 'primary', 
   className 
 }: CustomButtonProps) {
-  const baseStyles = "inline-flex items-center justify-between p-2 rounded-sm font-medium transition-all duration-200 hover:scale-105 group"
+  const baseStyles = "inline-flex items-center justify-between p-2 rounded-sm font-medium transition-all duration-200 hover:scale-105 group min-w-48"
   
   const variantStyles = {
     primary: {
@@ -42,7 +42,7 @@ function CustomButton({
         className
       )}
     >
-      <span className="mr-3 ml-4">{text}</span>
+      <span className="mr-3 ml-4 text-sm">{text}</span>
       <div className={cn(
         "flex items-center justify-center w-8 h-8 rounded-full transition-transform duration-200 group-hover:translate-x-1",
         currentVariant.iconBg

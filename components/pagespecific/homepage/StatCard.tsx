@@ -34,7 +34,7 @@ export const StatCard = ({
       </div>
       <div className="flex flex-row-reverse">
         <TransitionHorizontal>
-          <p className="text-text-primary text-md whitespace-pre-line mr-8">
+          <p className="text-text-primary text-md whitespace-pre-line mr-8 font-inter">
             {label}
           </p>
         </TransitionHorizontal>

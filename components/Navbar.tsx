@@ -12,14 +12,14 @@ const navLinks:{ name: string; href: string}[] = [
 ]
 function Navbar() {
   return (
-    <nav className='bg-white flex py-3 w-full items-center justify-between px-24 z-[100] sticky top-0'>
+    <nav className='bg-white flex py-3 w-full items-center justify-between px-24 z-[100] sticky top-0 font-inter'>
         <Image src = "/logo.png" alt = "Peraj Logo" width={80} height={50} />
         <div className='flex lg:gap-10'>
             {navLinks.map((link) => (
                 <Link 
                   key={link.name} 
                   href={link.href} 
-                  className='text-text-primary font-medium transition-colors duration-300'
+                  className='text-text-primary font-inter transition-colors duration-300'
                 >
                     {link.name}
                 </Link>

@@ -254,7 +254,7 @@ function LegacyMilestoneCard({
 }) {
   return (
     <div 
-      className="relative w-full min-h-[85vh] flex flex-col overflow-hidden"
+      className="relative w-full min-h-[92vh] flex flex-col overflow-hidden"
       style={{
         backgroundImage: `url(${milestone.backgroundImage})`,
         backgroundSize: 'cover',
@@ -273,7 +273,7 @@ function LegacyMilestoneCard({
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <TransitionVertical>
-            <h3 className="text-6xl font-medium mb-6 text-white">
+            <h3 className="text-6xl font-medium mb-6 text-white font-forum">
               {milestone.year}
             </h3>
           </TransitionVertical>
