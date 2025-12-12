@@ -3,6 +3,7 @@ import TransitionHorizontal from "@/animations/TransitionHorizontal";
 import TransitionVertical from "@/animations/TransitionVertical";
 import CustomButton from "@/components/CustomButton";
 import Navbar from "@/components/Navbar";
+import IndustriesSection from "@/components/pagespecific/homepage/IndustriesSection";
 import LegacyCarousel from "@/components/pagespecific/homepage/LegacyCarousel";
 import ProductsCarousel from "@/components/pagespecific/homepage/ProductCarousel";
 import SolutionsCarousel from "@/components/pagespecific/homepage/SolutionsCarousel";
@@ -164,6 +165,7 @@ function page() {
             </div>
           </div>
         </div>
+        <IndustriesSection />
       </section>
     </main>
   );
