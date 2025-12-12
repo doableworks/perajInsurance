@@ -121,7 +121,7 @@ function SolutionsCarousel() {
           }
         }}
         plugins={[autoplayPlugin.current]}
-        className="w-full ml-22"
+        className="w-full"
       >
         <CarouselContent className="-ml-4">
           {solutionsCarouselItems.map((item, index) => (
@@ -139,8 +139,8 @@ function SolutionsCarousel() {
                   <Image 
                     src={item.imageSrc}
                     alt={item.title}
-                    layout="fill"
-                    objectFit="contain"
+                    fill
+                    className="object-contain"
                     // className="p-24"
                   />
                 </div>

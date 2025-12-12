@@ -19,8 +19,7 @@ function page() {
           <Image
             src="/Hero.png"
             alt="Hero Image"
-            layout="fill"
-            objectFit="cover"
+            className="object-cover object-center z-10"
             fill
           />
           <div className="bg-gradient-to-t from-[#001D2D] to-transparent h-[60vh] w-full z-50 absolute bottom-0" />
@@ -145,6 +144,26 @@ function page() {
           </div>
         </div>
         <ProductsCarousel />
+      </section>
+      <section className="mb-20 w-full flex flex-col py-10 relative max-w-7xl mx-auto">
+                        <div className="flex flex-col items-start">
+          <div className="w-fit px-6 py-2 bg-primary-foreground text-text-primary text-sm font-medium rounded-sm transition-colors duration-300 flex items-center w-fit mb-8">
+            <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
+            Industries We Serve
+          </div>
+          <div className="w-full flex items-center justify-between mb-12">
+            <h2 className="text-5xl leading-tight md:leading-snug text-left flex-1 font-forum">
+              <TransitionHorizontal>
+               We help companies meet them  <br /> with the right protection.
+              </TransitionHorizontal>
+            </h2>
+            <div className="text-left text-lg">
+              <TransitionVertical>
+                <CustomButton text="Explore Industries" variant="primary" />
+              </TransitionVertical>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );

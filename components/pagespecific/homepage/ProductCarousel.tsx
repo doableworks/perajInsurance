@@ -21,34 +21,30 @@ interface SolutionsCaorouselItemsProps {
 
 const solutionsCarouselItems: SolutionsCaorouselItemsProps[] = [
     {
+        title: "PDBI",
+        description:"Smart protection for critical assets, infrastructure, and operational continuity.",
+        imageSrc:"/products/prod1.png",
+    },
+    {
+        title:"Liability/Casualty",
+        description:"Agile coverage for leadership, operations, and third-party exposure in fast-moving environments.",
+        imageSrc:"/products/prod2.png",
+    },
+    {
+        title:"Financial",
+        description:"Specialised protection for governance, financial integrity, and high-stake decision-making.",
+        imageSrc:"/products/prod3.png",
+    },
+    {
+        title:"Cyber",
+        description:"Advanced defence against ransomware, data breaches, and digital disruption.",
+        imageSrc:"/products/prod4.png",
+    },
+        {
         title: "Risk Management Practice",
         description:"We identify vulnerabilities to clarify your risk.",
-        imageSrc:"/solutions/sol1.svg",
+        imageSrc:"/products/prod1.png",
     },
-    {
-        title:"Global Programs",
-        description:"Powered by 400+ global partners we simplify cross border coverage.",
-        imageSrc:"/solutions/sol2.svg",
-    },
-    {
-        title:"Industry Benchmark",
-        description:"Decades of insurance expertise position us as a trusted benchmark.",
-        imageSrc:"/solutions/sol3.svg",
-    },
-    {
-        title:"Wellness Programs",
-        description:"Coverage that takes care of you and your family.",
-        imageSrc:"/solutions/sol4.svg",
-    },
-    {
-        title:"Claims Consultancy",
-        description:"Coverage that takes care of you and your family.",
-        imageSrc:"/solutions/sol5.svg",
-    },{
-        title:"Affinity Programs",
-        description:"Coverage that takes care of you and your family.",
-        imageSrc:"/solutions/sol6.svg",
-    }
 ]
 
 
@@ -127,64 +123,38 @@ function ProductsCarousel() {
           {solutionsCarouselItems.map((item, index) => (
             <CarouselItem
               key={index}
-              className="md:basis-1/2 lg:basis-[28%] pl-4"
+              className="md:basis-1/2 lg:basis-[33%] pl-4"
             >
               <motion.div 
-                className="p-1 bg-white text-white h-full min-h-[450px] flex flex-col p-4 group cursor-pointer hover:shadow-lg transition-all duration-300 rounded-sm"
+                className="p-1 bg-white text-white h-full aspect-square flex flex-col p-2 group cursor-pointer hover:shadow-lg transition-all duration-300 rounded-sm"
                 initial="rest"
                 whileHover="hover"
                 animate="rest"
               >
-                <div className="flex-1 relative overflow-hidden flex items-center justify-center mt-12">
+                <div className="flex-[0.7] relative overflow-hidden flex items-center justify-center rounded-xs">
                   <Image 
                     src={item.imageSrc}
                     alt={item.title}
-                    layout="fill"
-                    objectFit="contain"
-                    // className="p-24"
+                    fill
+                    className="object-cover object-center"
                   />
                 </div>
                 
-                <div className="flex-1 flex items-end p-2 overflow-hidden">
+                <div className="flex-[0.5] flex items-center p-10 overflow-hidden">
                   {/* Title and Description Column */}
-                  <div className="flex flex-col flex-1 w-full items-start mb-2 h-fit min-h-20">
-                    <motion.h3 
-                      className="text-[1.7rem] font-forum text-text-primary pr-2"
-                      variants={{
-                        rest: { y: 50 },
-                        hover: { y: 0 }
-                      }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
+                  <div className="flex flex-col flex-1 w-full items-start mb-2 h-full gap-4">
+                    <h3 
+                      className="text-4xl font-forum text-text-primary pr-2"
                     >
                       {item.title}
-                    </motion.h3>
-
-                    <motion.div
-                      className="overflow-hidden mr-4"
-                      variants={{
-                        rest: { height: 0 },
-                        hover: { height: "auto" }
-                      }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                    >
-                      <motion.p 
-                        className="text-sm text-black leading-relaxed"
-                        variants={{
-                          rest: { y: 10, opacity: 0 },
-                          hover: { y: 0, opacity: 1 }
-                        }}
-                        transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
-                       
+                    </h3>
+                      <p 
+                        className="text-lg text-black leading-relaxed"
                       >
                         {item.description}
-                      </motion.p>
-                    </motion.div>
+                      </p>
+
                   </div>
-                  
-                  {/* Cta button*/}
-                    <button className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center flex-shrink-0 group-hover:scale-115 transition-transform duration-200">
-                      <ArrowRight className="w-4 h-4 text-white" />
-                    </button>
                 </div>
               </motion.div>
             </CarouselItem>
