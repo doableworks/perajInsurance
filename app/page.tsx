@@ -8,6 +8,7 @@ import LegacyCarousel from "@/components/pagespecific/homepage/LegacyCarousel";
 import ProductsCarousel from "@/components/pagespecific/homepage/ProductCarousel";
 import SolutionsCarousel from "@/components/pagespecific/homepage/SolutionsCarousel";
 import StatsSection from "@/components/pagespecific/homepage/StatsSection";
+import { TestimonialsCarousel } from "@/components/reusable/Testimonials";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import Image from "next/image";
 
@@ -166,6 +167,9 @@ function page() {
           </div>
         </div>
         <IndustriesSection />
+      </section>
+      <section className="w-full mb-20 flex flex-col items-center">
+        <TestimonialsCarousel />
       </section>
     </main>
   );
